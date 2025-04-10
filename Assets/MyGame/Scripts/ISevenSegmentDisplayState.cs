@@ -1,8 +1,9 @@
 
 public interface ISevenSegmentDisplayState
 {
-    public int GetDigit()
-    {
-        return 0;
-    }
+    private static ISevenSegmentDisplayState _state;
+
+    public int GetDigit();
+
+    public static extern ISevenSegmentDisplayState GetState();
 }

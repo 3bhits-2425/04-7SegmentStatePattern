@@ -31,6 +31,18 @@ public class SevenSegmentDisplay : MonoBehaviour
         { true,  true,  true,  false, false, true,  true  }  // 9
     };
 
+    private ISevenSegmentDisplayState myDisplayState;
+    State0.GetState();
+
+    public ISevenSegmentDisplayState GetState()
+    {
+        //TODO
+    }
+
+    public bool SetState(ISevenSegmentDisplayState newState)
+    {
+        return true;
+    }
     private void Awake()
     {
         segments = GetComponentsInChildren<SegmentMover>();
