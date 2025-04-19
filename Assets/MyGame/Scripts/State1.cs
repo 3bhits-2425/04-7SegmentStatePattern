@@ -1,34 +1,35 @@
-public class State1 : ISevenSegmentDisplayState
+using UnityEngine;
+
+public class State1 : I7SegmentDisplayState
 {
-        //erstellen einer static Variable vom Typ ISevenSegmentDisplayState
-        private static ISevenSegmentDisplayState _state;
+    // erstelle static - Variable
+    private static I7SegmentDisplayState _state;
 
-        //konstruktor für obekte vom Typ State0
-        private State1()
+    // Konstruktor fuer Objekte vom Typ State0
+    private State1()
+    {
+
+    }
+
+    public static I7SegmentDisplayState GetState()
+    {
+        // TODO: dot not return null values!!!
+        if (_state == null)
         {
+            _state = new State1();
         }
+        return _state;
+    }
 
-        public static ISevenSegmentDisplayState GetState()
-        {
-            if (_state == null)
-            {
-                //erstellen einer neuen Instanz von State0 wenn keine existiert
-                _state = new State1();
-            }
-            return _state;
-        }
-
-        public int GetDigit()
-        {
-            return 1;
-        }
-
-        public ISevenSegmentDisplayState CountDown()
-        {
-            return State0.GetState();
-        }
-
-        public ISevenSegmentDisplayState CountUp()
+    public int GetDigit()
+    {
+        return 1;
+    }
+    public I7SegmentDisplayState CountDown()
+    {
+        return State0.GetState();
+    }
+    public I7SegmentDisplayState CountUp()
     {
         return State2.GetState();
     }

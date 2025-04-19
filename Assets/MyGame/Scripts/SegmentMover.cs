@@ -38,7 +38,7 @@ public class SegmentMover : MonoBehaviour
         lerpFactor = 0f; // Zur�cksetzen der Lerp-Animation
     }
 
-    public void Update()
+    private void Update()
     {
         lerpFactor += Mathf.Clamp01(moveSpeed * Time.deltaTime); // Zeitbasiertes Lerp
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, lerpFactor);

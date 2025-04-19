@@ -1,9 +1,6 @@
-
-public interface ISevenSegmentDisplayState
+public interface I7SegmentDisplayState
 {
-    private static ISevenSegmentDisplayState _state;
-
     public int GetDigit();
-
-    public static extern ISevenSegmentDisplayState GetState();
+    public I7SegmentDisplayState CountDown();
+    public I7SegmentDisplayState CountUp();
 }
